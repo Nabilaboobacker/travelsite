@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    ::placeholder{
+    text-align:center;
+    }
+    body {
+      text-align:center;
+      background-image: url('https://images.unsplash.com/photo-1599663414544-d4e248ed7a49');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+    .logo {
+      margin-top: 50px;
+    }
+    form {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      margin-top: 50px;
+      border-radius: 5px;
+      border:1px solid black;
+    }
+    label, input[type="text"], input[type="password"], button[type="submit"] {
+      display: block;
+      width: 100%;
+    }
+    label {
+      margin-top: 20px;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+    }
+    button[type="submit"] {
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="text-center logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Pinterest_Logo.svg" alt="" width="150" height="50">
+        </div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <center>
+{% for msg in messages %}
+  {{msg}}
+{% endfor %}
+  </center>
+</body>
+</html>
